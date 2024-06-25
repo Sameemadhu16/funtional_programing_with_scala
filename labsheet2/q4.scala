@@ -1,28 +1,31 @@
-object question04{
-    def main(args: Array[String]): Unit ={
-        println(profit(15));
-        println(profit(20));
-        println(profit(25));
-        println(profit(30));
 
+def noOfAttendees(t_price: Double): Double={
+        120 + (15 - t_price) * 20/5
     }
-}
-def noOfAttendees(ticket_price: Double): Double={
-        120 + (15 - ticket_price) * 4 // /5 *20
-    }
-def cost(ticket_price: Double):Double={
-    var noOfshow= (noOfAttendees(ticket_price)/120)
+def show_cost(t_price: Double):Double={
+    var noOfshow= (noOfAttendees(t_price)/120)
     if(noOfshow <= 1){
         noOfshow=1
     }else{
         noOfshow=2
     }
     
-       noOfshow*500+noOfAttendees(ticket_price)*3 
+       noOfshow*500+noOfAttendees(t_price)*3 
     }
-def income(ticket_price:Double):Double={
-    noOfAttendees(ticket_price)*ticket_price
+def income(t_price:Double):Double={
+    noOfAttendees(t_price)*t_price
 }
-def profit(ticket_price:Double):Double={
-    income(ticket_price)-cost(ticket_price)
+def profit(t_price:Double):Double={
+    income(t_price)-show_cost(t_price)
+}
+
+object question04{
+    def main(args: Array[String]): Unit ={
+        
+        println(profit(15));
+        println(profit(20));
+        println(profit(25));
+        println(profit(30));
+
+    }
 }

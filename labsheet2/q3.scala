@@ -8,7 +8,7 @@ object Company {
     }
 
     def tax(income: Double): Double = {
-        0.12 * income
+        12/100 * income
     }
 
     def main(args: Array[String]): Unit = {

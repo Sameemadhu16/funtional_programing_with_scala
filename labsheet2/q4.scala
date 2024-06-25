@@ -22,6 +22,8 @@ def profit(t_price:Double):Double={
 object question04{
     def main(args: Array[String]): Unit ={
         
+        println(profit(5));
+        println(profit(10));
         println(profit(15));
         println(profit(20));
         println(profit(25));

@@ -27,7 +27,7 @@ object question04{
         println(profit(15));
         println(profit(20));
         println(profit(25));
-        println(profit(30));
+        println(profit(30));  
 
     }
 }

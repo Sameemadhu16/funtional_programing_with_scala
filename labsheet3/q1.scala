@@ -11,6 +11,6 @@ object StringReversal {
     val inputString = "Hello, Sameera!"
     val reversedString = reverse(inputString)
     println(s"Original: $inputString")
-    println(s"Reversed: $reversedString")
+    println(s"Reversed: $reversedString")  
   }
 }

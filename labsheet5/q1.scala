@@ -2,31 +2,38 @@ import scala.io.StdIn.readLine
 
 object InventoryManagementSystem {
 
+  // Function to get the list of product names
   def getProductList(): List[String] = {
-    def getProductListHelper(products: List[String]): List[String] = {
-      val productName = readLine("Enter product name (or type 'done' to finish): ")
-      if (productName.toLowerCase == "done") products
-      else getProductListHelper(products :+ productName)
+    var productList: List[String] = List()
+    var input: String = ""
+    println("Enter product names (type 'done' when finished):")
+    while (input != "done") {
+      input = readLine()
+      if (input != "done") {
+        productList = productList :+ input
+      }
     }
-
-    getProductListHelper(List())
+    productList
   }
 
-  def printProductList(productList: List[String], index: Int = 1): Unit = {
-    if (productList.nonEmpty) {
-      println(s"${index}. ${productList.head}")
-      printProductList(productList.tail, index + 1)
+  // Function to print the product list with positions
+  def printProductList(productList: List[String]): Unit = {
+    productList.zipWithIndex.foreach { case (product, index) =>
+      println(s"${index + 1}. $product")
     }
   }
 
+  // Function to get the total number of products
   def getTotalProducts(productList: List[String]): Int = {
     productList.length
   }
 
+  // Main method to run the program
   def main(args: Array[String]): Unit = {
-    val productList = getProductList()
-    println("\nList of Products:\n")
-    printProductList(productList)
-    println(s"\nTotal number of products: ${getTotalProducts(productList)}")
+    val products = getProductList()
+    println("\nProduct List:")
+    printProductList(products)
+    val totalProducts = getTotalProducts(products)
+    println(s"\nTotal number of products: $totalProducts")
   }
 }

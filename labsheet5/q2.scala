@@ -1,10 +1,10 @@
-case class Book(title: String, author: String, isbn: String)
+case class Book(title: String, author: String, isbn: String) 
 
-object LibraryManagement {
-  var library: Set[Book] = Set(
+object LibraryManagement { 
+  var library: Set[Book] = Set( 
     Book("Famous Five", "Enid Blyton", "123456"),
-    Book("A Study in Scarlet", "Sir Arthur Conan Doyle", "222222"),
-    Book("The Sign of the Four", "Sir Arthur Conan Doyle", "334455")
+    Book("Madolduwa", "Martin Wickramasinghe", "222222"),
+    Book("The White Walker", "John Snow", "334455")
   )
 
   def addBook(book: Book): Unit = {
@@ -13,13 +13,13 @@ object LibraryManagement {
   }
 
   def removeBook(isbn: String): Unit = {
-    val bookToRemove = library.find(_.isbn == isbn)
+    val bookToRemove = library.find(_.isbn == isbn) 
     bookToRemove match {
       case Some(book) =>
-        library -= book
+        library -= book 
         println(s"Book '${book.title}' removed from the library.")
       case None =>
-        println(s"No book found with ISBN '$isbn'.")
+        println(s"No book found with ISBN '$isbn'.") 
     }
   }
 
@@ -43,7 +43,7 @@ object LibraryManagement {
   }
 
   def displayBooksByAuthor(author: String): Unit = {
-    val booksByAuthor = library.filter(_.author.equalsIgnoreCase(author))
+    val booksByAuthor = library.filter(_.author.equalsIgnoreCase(author)) //filters the books by the given author.
     if (booksByAuthor.nonEmpty) {
       println(s"\nBooks by '$author':")
       booksByAuthor.foreach(book => println(s"Title: ${book.title}, ISBN: ${book.isbn}"))
@@ -57,7 +57,7 @@ object LibraryManagement {
     displayLibrary()
 
     // Add a new book
-    val newBook = Book("Kittey", "Irumi Theekshana", "667788")
+    val newBook = Book("The Prince", "John Wilson", "667788")
     addBook(newBook)
     displayLibrary()
 
@@ -66,12 +66,12 @@ object LibraryManagement {
     displayLibrary()
 
     // Check if a book is in the library by ISBN
-    println(s"Is book with ISBN '1122334455' in the library? ${isBookInLibrary("1122334455")}")
+    println(s"\nIs book with ISBN '222222' in the library? ${isBookInLibrary("123456")}")
 
     // Search for a book by title
-    searchBookByTitle("Famous Five")
+    searchBookByTitle("Madolduwa")
 
     // Display all books by a specific author
-    displayBooksByAuthor("Sir Arthur Conan Doyle")
+    displayBooksByAuthor("John Snow")
   }
 }

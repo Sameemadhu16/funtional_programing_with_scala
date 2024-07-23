@@ -35,7 +35,7 @@ object MainApp{
       println(s"${volume(r)}");
       val t=10
       println(s"${total(t)}");
-      val ep1= 2
+      val ep1 = 2
       val ep2 = 3
       val ep3 = 2
       println(s"${total_run_time(ep1,ep2,ep3)}")

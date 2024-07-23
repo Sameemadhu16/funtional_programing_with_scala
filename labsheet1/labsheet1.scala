@@ -27,7 +27,7 @@ object MainApp{
   }
 
   def main(args: Array[String]): Unit = {
-      val res=7;
+      val res=8;
       println(s"area is : ${area(res)}");
       val f = 30;
       println(s"${fahrenhite(f)}");

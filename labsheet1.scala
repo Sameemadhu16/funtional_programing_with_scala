@@ -4,17 +4,13 @@ object MainApp{
       
   }
 
-
   def fahrenhite(celcius: Double):Double={
       return celcius * 1.8000 + 32.00;
   }
 
-
   def volume(r: Double):Double={
       return 4/3 * Math.PI * r * r * r;
   }
-
-
 
   def total(book_count:Int):Double={
     if(book_count>50){
@@ -29,7 +25,6 @@ object MainApp{
   def total_run_time(epr1:Double,tpr:Double,epr2:Double):Double={
       return epr1*8 + tpr*7 + epr2*8;
   }
-
 
   def main(args: Array[String]): Unit = {
       val res=7;

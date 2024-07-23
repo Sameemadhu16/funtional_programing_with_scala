@@ -1,18 +1,23 @@
-object PatternMatching {
-  def main(args: Array[String]): Unit = {
-    
-    println("Please provide an integer as a command line argument.")
-    val input = args(0).toInt
-    checkNumber(input)
-      
-    }
-  
+object Q2 {
+  def identifynum(): Unit = {
+    try { // A try block to catch exceptions that might occur during the execution of the enclosed code.
+      println("Input a number:")
+      val input = scala.io.StdIn.readLine().toInt //Reads a line of input from the standard input (console) and attempts to convert it to an integer
 
-  def checkNumber(number: Int): Unit = {
-    number match {
-      case x if x <= 0 => println("Negative/Zero input")
-      case x if x % 2 == 0 => println("Even number")
-      case _ => println("Odd number")
+      if (input <= 0) {
+        println("Negative or Zero")
+      } else if (input % 2 == 0) {
+        println("Even number")
+      } else {
+        println("Odd number")
+      }
+    } catch {
+      case e: NumberFormatException =>
+        println("Invalid input. Please enter a valid integer.")
     }
+  }
+
+  def main(args: Array[String]): Unit = {
+    identifynum()
   }
 }

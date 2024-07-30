@@ -3,18 +3,18 @@ object Inventory {
   var item_quantities: Array[Int] = Array(10, 12, 4)
 
   def displayInventory(names: Array[String], quantities: Array[Int]): Unit = {
-    names.zip(quantities).foreach { case (name, quantity) => println(s"$name: $quantity") } // Combines the two arrays into an array of pairs (tuples), where each pair consists of an item name and its quantity.
+    names.zip(quantities).foreach { case (name, quantity) => println(s"$name: $quantity") } 
   }
 
   def restockItem(item_name: String, item_quantity: Int, names: Array[String], quantities: Array[Int]): Array[Int] = {
-    val index = names.indexOf(item_name) //Finds the index of the item in the names array.
+    val index = names.indexOf(item_name) 
     if (index != -1) {
       quantities(index) += item_quantity
-      println(s"Restocked $item_quantity of $item_name. New quantity: ${quantities(index)}") // Adds the restock quantity to the current quantity.
+      println(s"Restocked $item_quantity of $item_name. New quantity: ${quantities(index)}") 
     } else {
       println(s"Item '$item_name' does not exist in the inventory.")
     }
-    quantities //Returns the updated quantities array.
+    quantities 
   }
 
   def sellItem(item_name: String, item_quantity: Int, names: Array[String], quantities: Array[Int]): Array[Int] = {

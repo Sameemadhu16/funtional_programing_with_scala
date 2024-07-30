@@ -20,8 +20,6 @@ object MainApp{
     }
   } 
 
-
-
   def total_run_time(epr1:Double,tpr:Double,epr2:Double):Double={
       return epr1*8 + tpr*7 + epr2*8;
   }

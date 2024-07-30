@@ -14,7 +14,7 @@ object StringFormatter {
     def main(args: Array[String]): Unit = {
         val names = List("Benny", "Niroshan", "Saman", "Kumara")
 
-        // Apply specific formatting to each name
+        
         names.foreach { name =>
             val formattedName = name match {
                 case "Benny" => formatNames(name, toUpper)

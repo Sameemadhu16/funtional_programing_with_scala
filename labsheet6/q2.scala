@@ -1,7 +1,6 @@
 import scala.io.StdIn._
 
 def getStudentInfo: (String, Int, Int, Double, Char) = {
-    var isValid = false
     var name = ""
     var marks = 0
     var totalMarks = 0
@@ -13,7 +12,7 @@ def getStudentInfo: (String, Int, Int, Double, Char) = {
       totalMarks = readInt()
       
       val validation = validateInput(name, marks, totalMarks)
-      isValid = validation._1
+      var isValid = validation._1
       if (!isValid) println(s"Error: ${validation._2}")
     
     

@@ -60,6 +60,7 @@ def main(args: Array[String]): Unit = {
       102 -> ("ProductB", 10, 75.0),
       104 -> ("ProductD", 15, 25.0)
     )
+    
 
     val inventory3: Map[Int, (String, Int, Double)] = Map();
 

@@ -1,6 +1,5 @@
 object CaesarCipher {
 
-  // Encrypt function
   def encrypt(text: String, shift: Int): String = {
     text.map { char =>
       if (char.isLetter) {
@@ -12,12 +11,10 @@ object CaesarCipher {
     }
   }
 
-  // Decrypt function
   def decrypt(text: String, shift: Int): String = {
     encrypt(text, 26 - shift)
   }
 
-  // Cipher function that takes either encrypt or decrypt function
   def cipher(text: String, shift: Int, operation: (String, Int) => String): String = {
     operation(text, shift)
   }

@@ -9,7 +9,7 @@ def categorizeNumber(input: Int): String = {
 
 def main(args: Array[String]): Unit = {
   
-  println("Please provide exactly one integer as an input.")
+  println("Please enter integer as an input.")
   var input=scala.io.StdIn.readInt()
 
   var message=categorizeNumber(input)

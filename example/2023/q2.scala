@@ -5,3 +5,5 @@ object exam extends App{
     val y = x.map(x=>f1(x)).map(x=>f2(x))
     println(y)
 }
+
+//List(2,8,18,32,50)

@@ -7,3 +7,4 @@ object exam extends App{
     val z = x.map(x=> x+y)
     println(z);
 }
+//List(136,137,138,139,140)

@@ -11,11 +11,10 @@ object exam extends App {
     val averageMarks = totalMarks/f_list._1
 
     val sortedStudents = students.sortBy(_.marks).reverse
-    val print = (s:Student) =>println(s"${s.name}    => ${s.marks}")
 
     // Print the total marks
     println(s"Total marks of students is $totalMarks")
     println(s"Average marks of students is $averageMarks")
     //println(sortedStudents)
-    sortedStudents.map((x)=>print(x))
+    sortedStudents.map((s:Student) =>println(s"${s.name}    => ${s.marks}"))
 }

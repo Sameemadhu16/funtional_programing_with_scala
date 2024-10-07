@@ -7,7 +7,7 @@ case _ => GCD(b,a%b)
 }
 def prime(n:Int,i:Int=2):Boolean=i match{
 case x if(x==n) => true
-case x if gcd.GCD(n,x)>1 => false
+case x if GCD(n,x)>1 => false
 case x => prime(n,x+1)
 }
 println(prime(5))
